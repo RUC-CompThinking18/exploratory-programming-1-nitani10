@@ -1,0 +1,38 @@
+import random # imports random module which is later helpful in generating random numbers
+total_test_scores = []
+def average(total_test_scores):
+    counter = random.randint(3, 11) # creates a random integer between 3 and 10 that will be used to determine the end point of the range (later used to compute the amount of items in the list)
+    print ("this list will have " + str(counter-1) + " items") # tells the user how many items there are in the list
+    print "-----------------------------------------------------------------------------------"
+    for number in range (1,counter): # a for loop that enables the test_scores number to be randomly generated. The amount of times that the number will be generated depents on the random counter end point range that is defined above. This list can be as large as 10 and as small as 2 items.
+        # the following if/elif/else sequence is intended to change the variable of number into ordinal numbers
+        if (number == 1):
+            ordinal = "first"
+        elif(number == 2):
+            ordinal = "second"
+        elif(number == 3):
+            ordinal = "third"
+        elif(number == 4):
+            ordinal = "fourth"
+        elif(number == 5):
+            ordinal = "fifth"
+        elif(number == 6):
+            ordinal = "sixth"
+        elif(number == 7):
+            ordinal = "seventh"
+        elif(number == 8):
+            ordinal = "eigth"
+        elif(number == 9):
+            ordinal = "ninth"
+        else:
+            ordinal = "tenth"
+        print("Please write the " + ordinal + " item on the list: ") # repeatedly asks user to input a number onto the list
+        test_scores = raw_input() #enables user to input numbers to list
+        total_test_scores.append(float(test_scores)) # individually adds inputed numbers into list and formats the numbers in float form
+    print "-----------------------------------------------------------------------------------"
+    print ""
+    print "List of test scores: " + str(total_test_scores)
+    print "Sum of test scores: " + str(sum(total_test_scores))
+    print "Length of list: " + str(len(total_test_scores))
+    average_test_scores = (sum(total_test_scores)/len(total_test_scores)) #finds sum and length of array to compute average_test_scores
+    print "Average of test scores: " + format("{0:.2f}".format(average_test_scores)) # prints average_test_scores in string form and formats it so that there are only two decimal points
